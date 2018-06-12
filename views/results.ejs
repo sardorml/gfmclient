@@ -20,7 +20,10 @@
 		      <p>Total amount you have to pay is <b><%= obj.amount %>won</b></p>
           <% if(obj.number == 1){ %>
             <p>You have no friends :(</p>
-
+            <p>Go make some friends and then come back</p>
+          <%}%>
+          <% if(obj.number != 1 && obj.amount > 30000){ %>
+            <p>You need to hang out less</p>
           <%}%>
 		      <p>Other <b><%= obj.number-1 %></b> members have to pay <b><%= obj.result_for_each %>won</b> each</p>
 		      <div style="padding-top: 15px">
