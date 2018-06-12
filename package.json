@@ -1,0 +1,27 @@
+{
+  "name": "gfm",
+  "version": "1.0.0",
+  "description": "Good Friend Me",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "good",
+    "friend",
+    "me"
+  ],
+  "author": "Sardor",
+  "license": "ISC",
+  "dependencies": {
+    "body": "^5.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "nodemon": "^1.17.5",
+    "parser": "^0.1.4"
+  },
+  "devDependencies": {
+    "ws": "3.3.2"
+  }
+}
