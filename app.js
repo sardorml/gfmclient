@@ -13,6 +13,9 @@ var extra;
 var one_third;
 var for_each;
 ///////
+var rem;
+var whole;
+///////
 
 var calculate = function(input){
 	if(input.number>1){
@@ -47,11 +50,26 @@ var calculate = function(input){
 	console.log('Total amount need to be paid by other members: ', input.result_for_each);
 }
 
+var roundIt = function(input){
+	if(input.result_for_each<10000 && input.result_for_each>1000){
+		rem = input.result_for_each%1000;
+		whole = input.result_for_each-rem;
+
+		input.result_for_each = whole;
+		input.amount = input.amount +((input.number-1)*rem)
+		input.amount = Math.round(input.amount);
+	}
+}
+
 app.set('view engine', 'ejs');
 
 app.get('/', function(req,res){
 
 	res.render('home',{obj: req.query});
+});
+app.get('/round', function(req,res){
+	roundIt(input);
+	res.render("results",{obj: input})
 });
 
 
