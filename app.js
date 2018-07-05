@@ -5,7 +5,7 @@ const Promise = require('bluebird');
 
 let app = express();
 
-const PORT = process.env.PORT || 4500;
+const PORT = process.env.PORT || 8083;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
@@ -14,7 +14,7 @@ var result;
 
 var newRequest = function(input){
 	return new Promise(function(resolve,reject){
-		request(`http://localhost:8080/api/${input.number}/${input.amount}`, (err, res, body) => {
+		request(`http://localhost:8082/api/${input.number}/${input.amount}`, (err, res, body) => {
 		  if (err) { reject(err); }
 			else{
 				result = body;
@@ -26,7 +26,7 @@ var newRequest = function(input){
 }
 var roundRequest = function(input){
 	return new Promise(function(resolve,reject){
-		request(`http://localhost:8080/api/round/${input.number}/${input.amount}`, (err, res, body) => {
+		request(`http://localhost:8082/api/round/${input.number}/${input.amount}`, (err, res, body) => {
 		  if (err) { return console.log(err); }
 			result = body;
 			resolve(JSON.parse(result));

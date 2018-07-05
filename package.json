@@ -20,7 +20,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "parser": "^0.1.4",
-    "request": "^2.87.0",
+    "request": "^2.87.0"
   },
   "devDependencies": {
     "ws": "3.3.2"
